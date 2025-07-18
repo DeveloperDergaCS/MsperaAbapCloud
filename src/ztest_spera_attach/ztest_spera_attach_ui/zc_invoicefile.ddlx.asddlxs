@@ -1,0 +1,70 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'InvGuid'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'FileName'
+annotate view ZC_InvoiceFile with
+{
+  @UI.facet: [ {
+    label: 'Invoice Information',
+    id: 'InvoiceInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  },
+
+  {
+    label: 'File Information',
+    id: 'FileInfo',
+    purpose: #STANDARD,
+    position: 20 ,
+    type: #FIELDGROUP_REFERENCE,
+    targetQualifier: 'GroupFileInfo'
+  } ]
+
+  @UI.identification: [ { position: 10 } ]
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.selectionField: [ { position: 10 } ]
+  InvGuid;
+
+  @UI.identification: [ { position: 20 } ]
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.selectionField: [ { position: 20 } ]
+  Land;
+
+  @UI.identification: [ { position: 30 } ]
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.selectionField: [ { position: 30 } ]
+  Company;
+
+  @UI.identification: [ { position: 40 } ]
+  @UI.lineItem: [ { position: 40 } ]
+  @UI.selectionField: [ { position: 40 } ]
+  DateAgency;
+
+  @UI.lineItem: [ { position: 60 } ]
+  @UI.fieldGroup: [{ position: 10, qualifier: 'GroupFileInfo' } ]
+  FileName;
+
+  @UI.fieldGroup: [{ position: 20, qualifier: 'GroupFileInfo' } ]
+  Content;
+
+  @UI.lineItem: [ { position: 90 } ]
+  @UI.selectionField: [ { position: 90 } ]
+  @UI.fieldGroup: [{ position: 30, qualifier: 'GroupFileInfo' } ]
+  CreateAt;
+
+  @UI.lineItem: [ { position: 100 } ]
+  @UI.selectionField: [ { position: 100 } ]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'GroupFileInfo' } ]
+  CreateBy;
+
+  @UI.fieldGroup: [{ position: 50, qualifier: 'GroupFileInfo' } ]
+  LocalLastChangedBy;
+
+  @UI.fieldGroup: [{ position: 60, qualifier: 'GroupFileInfo' } ]
+  LocalLastChangedAt;
+
+  @UI.fieldGroup: [{ position: 70, qualifier: 'GroupFileInfo' } ]
+  LastChangedAt;
+}
